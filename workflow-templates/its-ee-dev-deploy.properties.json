@@ -1,5 +1,5 @@
 {
   "name": "ITS Expression Engine Dev Deployment Workflow",
   "description": "ITS EE workflow template for development.",
-  "iconName": "its-ee-dev-template.svg"
+  "iconName": "its-ee-dev-template"
 }
