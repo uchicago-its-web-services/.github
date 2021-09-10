@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         # Development deployment.
-        # Run shell commands from the hosted runner as andromeda.
+        # Run shell commands from the hosted runner as beanstalk.
         # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
