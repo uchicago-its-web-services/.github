@@ -1,0 +1,5 @@
+{
+  "name": "ITS Expression Engine Prod Deployment Workflow",
+  "description": "ITS EE workflow template for production.",
+  "iconName": "its-ee-prod-template.svg"
+}
