@@ -14,6 +14,6 @@ jobs:
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
                 cp $GITHUB_WORKSPACE/system/user/config/.env-dev $GITHUB_WORKSPACE/system/user/config/.env
-                rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -ad --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wseedev04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
-                rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -ad --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wseedev05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
-                rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -ad --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wseedev06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+                rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wseedev04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+                rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wseedev05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+                rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wseedev06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
