@@ -10,17 +10,18 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: andromeda-self-runner
     steps:
-      - name: Production Checkout
-        uses: actions/checkout@v2
-        with:
-          path: ee5_prod
-
+      steps:
+        - name: Production Checkout
+          uses: actions/checkout@v2
+          with:
+            path: ee5_prod
         # Production deployment.
         # Run shell commands from the hosted runner as beanstalk.
         # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
-          cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env-prod $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env
-          rsync --no-perms --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/ee5_prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/* wsee04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
-          rsync --no-perms --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/ee5_prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/* wsee05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
-          rsync --no-perms --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/ee5_prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/* wsee06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+          cp $GITHUB_WORKSPACE/system/user/config/.env-prod $GITHUB_WORKSPACE/.env-prod/system/user/config/.env
+          chmod 666  $GITHUB_WORKSPACE/ee5_prod/system/user/config/config.php
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/.env-prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/.env-prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/.env-prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/

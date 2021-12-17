@@ -18,6 +18,7 @@ jobs:
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env
+          chmod 666  $GITHUB_WORKSPACE/ee5_dev/system/user/config/config.php
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/ee5_dev/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/* wseedev04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/ee5_dev/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/* wseedev05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/ee5_dev/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/* wseedev06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
