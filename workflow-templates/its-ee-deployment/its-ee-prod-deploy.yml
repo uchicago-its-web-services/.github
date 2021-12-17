@@ -20,7 +20,8 @@ jobs:
         # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
-          cp $GITHUB_WORKSPACE/system/user/config/.env-prod $GITHUB_WORKSPACE/system/user/config/.env
-          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
-          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
-          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+          cp $GITHUB_WORKSPACE/system/user/config/.env-prod $GITHUB_WORKSPACE/.env-prod/system/user/config/.env
+          chmod 666  $GITHUB_WORKSPACE/ee5_prod/system/user/config/config.php
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/.env-prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee04:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/.env-prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee05:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=$GITHUB_WORKSPACE/.env-prod/system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/* wsee06:${{ secrets.ANDROMEDA_AWS_PATH }}/${{ github.event.repository.name }}/
