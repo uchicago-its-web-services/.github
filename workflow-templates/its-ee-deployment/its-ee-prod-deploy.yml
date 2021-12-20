@@ -9,7 +9,6 @@ jobs:
     # Only triggers on successfully approved pull requests.
     if: github.event.pull_request.merged == true
     runs-on: andromeda-self-runner
-    steps:
       steps:
         - name: Production Checkout
           uses: actions/checkout@v2
