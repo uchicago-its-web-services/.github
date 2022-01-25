@@ -1,4 +1,4 @@
-name: ee-development-deployment
+name: ee-psd-development-deployment
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: andromeda-self-runner
     steps:
-      - name: Development Checkout
+      - name:PSD Development Checkout
         uses: actions/checkout@v2
         with:
           path: ee5_dev
