@@ -32,6 +32,21 @@ jobs:
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-theory ~/actions-runner/_work/theory/theory/system/user/config/.env
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-jfi ~/actions-runner/_work/jfi/jfi/system/user/config/.env
 
+               chmod 666  $GITHUB_WORKSPACE/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/cam/cam/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/efi/efi/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/finmath/finmath/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/kctp/kctp/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/kavlicosmo/kavlicosmo/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/mathematics/mathematics/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/mrsec/mrsec/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/physics/physics/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/stat/stat/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/theory/theory/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/jfi/jfi/system/user/config/config.php
+
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev04:/var/www/docs/ee_sites/astrophysics/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev05:/var/www/docs/ee_sites/astrophysics/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev06:/var/www/docs/ee_sites/astrophysics/
