@@ -31,7 +31,6 @@ jobs:
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-psdlbc ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/.env
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-theory ~/actions-runner/_work/theory/theory/system/user/config/.env
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-jfi ~/actions-runner/_work/jfi/jfi/system/user/config/.env
-
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev04:/var/www/docs/ee_sites/astrophysics/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev05:/var/www/docs/ee_sites/astrophysics/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev06:/var/www/docs/ee_sites/astrophysics/
@@ -74,7 +73,6 @@ jobs:
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev04:/var/www/docs/ee_sites/jfi/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev05:/var/www/docs/ee_sites/jfi/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev06:/var/www/docs/ee_sites/jfi/
-
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env wseedev04:/var/www/docs/ee_sites/astrophysics/system/user/config/
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env wseedev05:/var/www/docs/ee_sites/astrophysics/system/user/config/
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env wseedev06:/var/www/docs/ee_sites/astrophysics/system/user/config/
@@ -111,7 +109,6 @@ jobs:
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/system/user/config/.env wseedev04:/var/www/docs/ee_sites/theory/system/user/config/
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/system/user/config/.env wseedev05:/var/www/docs/ee_sites/theory/system/user/config/
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/system/user/config/.env wseedev06:/var/www/docs/ee_sites/theory/system/user/config/
-
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/system/user/config/.env wseedev04:/var/www/docs/ee_sites/jfi/system/user/config/
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/system/user/config/.env wseedev05:/var/www/docs/ee_sites/jfi/system/user/config/
           rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/system/user/config/.env wseedev06:/var/www/docs/ee_sites/jfi/system/user/config/
