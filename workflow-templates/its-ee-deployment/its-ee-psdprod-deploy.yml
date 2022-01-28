@@ -2,7 +2,7 @@ name: ee-production-deployment
 on:
   pull_request:
     branches:
-     #replace with psd branch name
+      #Add branch name here.
     types: [ closed ]
 jobs:
   build:
@@ -14,11 +14,11 @@ jobs:
       - name: Production Checkout
         uses: actions/checkout@v2
         with:
-          path: ee5_prod
+          path: ee5_prod/$GITHUB_REF_NAME
 
         # Production deployment.
         # Run shell commands from the hosted runner as beanstalk.
         # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
-        echo ${{ github.event.github.ref_name }}
+         echo $GITHUB_REF_NAME
