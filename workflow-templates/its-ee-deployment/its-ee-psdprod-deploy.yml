@@ -30,9 +30,5 @@ jobs:
             mkdir ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/
             mkdir ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod
           fi
-          echo "::set-env name=PSD_WORKSPACE::$(echo ~/actions-runner/_work/{$GITHUB_REF_NAME/$GITHUB_REF_NAME}/ee5_prod/)"
-          cp -r $GITHUB_WORKSPACE/ee5_prod/$GITHUB_REF_NAME/* $PSD_WORKSPACE/
-          rm -rf $GITHUB_WORKSPACE/ee5_prod/$GITHUB_REF_NAME
-          cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env-prod $PSD_WORKSPACE/system/user/config/.env
-          chmod 666 $PSD_WORKSPACE/system/user/config/config.php
-
+          cp -r $GITHUB_WORKSPACE/ee5_prod/$GITHUB_REF_NAME/* ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/
+           cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env-prod $PSD_WORKSPACE/system/user/config/.env

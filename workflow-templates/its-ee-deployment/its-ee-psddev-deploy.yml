@@ -18,34 +18,34 @@ jobs:
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
           cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-astro ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-cam ~/actions-runner/_work/cam/cam/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-efi ~/actions-runner/_work/efi/efi/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-finmath ~/actions-runner/_work/finmath/finmath/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-kctp ~/actions-runner/_work/kctp/kctp/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-kavli ~/actions-runner/_work/kavlicosmo/kavlicosmo/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-math ~/actions-runner/_work/mathematics/mathematics/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-mrsec ~/actions-runner/_work/mrsec/mrsec/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-physics ~/actions-runner/_work/physics/physics/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-stat ~/actions-runner/_work/stat/stat/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-psdlbc ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-theory ~/actions-runner/_work/theory/theory/system/user/config/.env
-          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-jfi ~/actions-runner/_work/jfi/jfi/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-astro ~/actions-runner/_work/astrophysics/astrophysics/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-cam ~/actions-runner/_work/cam/cam/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-efi ~/actions-runner/_work/efi/efi/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-finmath ~/actions-runner/_work/finmath/finmath/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-kctp ~/actions-runner/_work/kctp/kctp/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-kavli ~/actions-runner/_work/kavlicosmo/kavlicosmo/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-math ~/actions-runner/_work/mathematics/mathematics/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-mrsec ~/actions-runner/_work/mrsec/mrsec/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-physics ~/actions-runner/_work/physics/physics/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-stat ~/actions-runner/_work/stat/stat/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-psdlbc ~/actions-runner/_work/psdlbc/psdlbc/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-theory ~/actions-runner/_work/theory/theory/ee5_dev/system/user/config/.env
+          cp $GITHUB_WORKSPACE/ee5_dev/system/user/config/.env-dev-jfi ~/actions-runner/_work/jfi/jfi/ee5_dev/system/user/config/.env
 
                chmod 666  $GITHUB_WORKSPACE/ee5_dev/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/cam/cam/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/efi/efi/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/finmath/finmath/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/kctp/kctp/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/kavlicosmo/kavlicosmo/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/mathematics/mathematics/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/mrsec/mrsec/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/physics/physics/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/stat/stat/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/theory/theory/system/user/config/config.php
-               chmod 666 ~/actions-runner/_work/jfi/jfi/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/astrophysics/astrophysics/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/cam/cam/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/efi/efi/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/finmath/finmath/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/kctp/kctp/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/kavlicosmo/kavlicosmo/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/mathematics/mathematics/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/mrsec/mrsec/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/physics/physics/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/stat/stat/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/psdlbc/psdlbc/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/theory/theory/ee5_dev/system/user/config/config.php
+               chmod 666 ~/actions-runner/_work/jfi/jfi/ee5_dev/system/user/config/config.php
 
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev04:/var/www/docs/ee_sites/astrophysics/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev05:/var/www/docs/ee_sites/astrophysics/
@@ -90,42 +90,42 @@ jobs:
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev05:/var/www/docs/ee_sites/jfi/
           rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_dev/ wseedev06:/var/www/docs/ee_sites/jfi/
 
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env wseedev04:/var/www/docs/ee_sites/astrophysics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env wseedev05:/var/www/docs/ee_sites/astrophysics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/system/user/config/.env wseedev06:/var/www/docs/ee_sites/astrophysics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/cam/cam/system/user/config/.env wseedev04:/var/www/docs/ee_sites/cam/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/cam/cam/system/user/config/.env wseedev05:/var/www/docs/ee_sites/cam/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/cam/cam/system/user/config/.env wseedev06:/var/www/docs/ee_sites/cam/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/efi/efi/system/user/config/.env wseedev04:/var/www/docs/ee_sites/efi/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/efi/efi/system/user/config/.env wseedev05:/var/www/docs/ee_sites/efi/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/efi/efi/system/user/config/.env wseedev06:/var/www/docs/ee_sites/efi/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/finmath/finmath/system/user/config/.env wseedev04:/var/www/docs/ee_sites/finmath/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/finmath/finmath/system/user/config/.env wseedev05:/var/www/docs/ee_sites/finmath/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/finmath/finmath/system/user/config/.env wseedev06:/var/www/docs/ee_sites/finmath/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kctp/kctp/system/user/config/.env wseedev04:/var/www/docs/ee_sites/kctp/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kctp/kctp/system/user/config/.env wseedev05:/var/www/docs/ee_sites/kctp/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kctp/kctp/system/user/config/.env wseedev06:/var/www/docs/ee_sites/kctp/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kavlicosmo/kavlicosmo/system/user/config/.env wseedev04:/var/www/docs/ee_sites/kavlicosmo/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kavlicosmo/kavlicosmo/system/user/config/.env wseedev05:/var/www/docs/ee_sites/kavlicosmo/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kavlicosmo/kavlicosmo/system/user/config/.env wseedev06:/var/www/docs/ee_sites/kavlicosmo/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mathematics/mathematics/system/user/config/.env wseedev04:/var/www/docs/ee_sites/mathematics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mathematics/mathematics/system/user/config/.env wseedev05:/var/www/docs/ee_sites/mathematics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mathematics/mathematics/system/user/config/.env wseedev06:/var/www/docs/ee_sites/mathematics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mrsec/mrsec/system/user/config/.env wseedev04:/var/www/docs/ee_sites/mrsec/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mrsec/mrsec/system/user/config/.env wseedev05:/var/www/docs/ee_sites/mrsec/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mrsec/mrsec/system/user/config/.env wseedev06:/var/www/docs/ee_sites/mrsec/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/physics/physics/system/user/config/.env wseedev04:/var/www/docs/ee_sites/physics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/physics/physics/system/user/config/.env wseedev05:/var/www/docs/ee_sites/physics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/physics/physics/system/user/config/.env wseedev06:/var/www/docs/ee_sites/physics/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/stat/stat/system/user/config/.env wseedev04:/var/www/docs/ee_sites/stat/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/stat/stat/system/user/config/.env wseedev05:/var/www/docs/ee_sites/stat/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/stat/stat/system/user/config/.env wseedev06:/var/www/docs/ee_sites/stat/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/.env wseedev04:/var/www/docs/ee_sites/psdlbc/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/.env wseedev05:/var/www/docs/ee_sites/psdlbc/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/psdlbc/psdlbc/system/user/config/.env wseedev06:/var/www/docs/ee_sites/psdlbc/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/system/user/config/.env wseedev04:/var/www/docs/ee_sites/theory/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/system/user/config/.env wseedev05:/var/www/docs/ee_sites/theory/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/system/user/config/.env wseedev06:/var/www/docs/ee_sites/theory/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/system/user/config/.env wseedev04:/var/www/docs/ee_sites/jfi/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/system/user/config/.env wseedev05:/var/www/docs/ee_sites/jfi/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/system/user/config/.env wseedev06:/var/www/docs/ee_sites/jfi/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/astrophysics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/astrophysics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/astrophysics/astrophysics/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/astrophysics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/cam/cam/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/cam/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/cam/cam/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/cam/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/cam/cam/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/cam/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/efi/efi/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/efi/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/efi/efi/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/efi/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/efi/efi/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/efi/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/finmath/finmath/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/finmath/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/finmath/finmath/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/finmath/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/finmath/finmath/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/finmath/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kctp/kctp/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/kctp/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kctp/kctp/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/kctp/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kctp/kctp/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/kctp/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kavlicosmo/kavlicosmo/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/kavlicosmo/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kavlicosmo/kavlicosmo/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/kavlicosmo/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/kavlicosmo/kavlicosmo/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/kavlicosmo/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mathematics/mathematics/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/mathematics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mathematics/mathematics/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/mathematics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mathematics/mathematics/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/mathematics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mrsec/mrsec/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/mrsec/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mrsec/mrsec/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/mrsec/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/mrsec/mrsec/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/mrsec/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/physics/physics/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/physics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/physics/physics/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/physics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/physics/physics/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/physics/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/stat/stat/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/stat/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/stat/stat/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/stat/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/stat/stat/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/stat/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/psdlbc/psdlbc/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/psdlbc/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/psdlbc/psdlbc/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/psdlbc/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/psdlbc/psdlbc/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/psdlbc/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/theory/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/theory/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/theory/theory/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/theory/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/ee5_dev/system/user/config/.env wseedev04:/var/www/docs/ee_sites/jfi/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/ee5_dev/system/user/config/.env wseedev05:/var/www/docs/ee_sites/jfi/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/jfi/jfi/ee5_dev/system/user/config/.env wseedev06:/var/www/docs/ee_sites/jfi/system/user/config/
