@@ -15,20 +15,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           # Add branch name below: ee5_prod/<branch-name>
-          path: ee5_prod/
+          path: ee5_prod
 
         # Production deployment.
         # Run shell commands from the hosted runner as beanstalk.
         # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
       - run: |
-          if [ -d ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/ ]
-          then
-            rm -rf ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/*
-          else
-            mkdir ~/actions-runner/_work/$GITHUB_REF_NAME/
-            mkdir ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/
-            mkdir ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod
-          fi
-          cp -r $GITHUB_WORKSPACE/ee5_prod/$GITHUB_REF_NAME/* ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/
-           cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env-prod $PSD_WORKSPACE/system/user/config/.env
+        cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/{{prod env file name}} ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env
+        rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
+        rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
+        rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
+
+        rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wseedev04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
+        rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wseedev05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
+        rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wseedev06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
