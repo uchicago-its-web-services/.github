@@ -1,4 +1,4 @@
-name: ee-production-deployment
+name: ee-psd-production-deployment
 on:
   pull_request:
     branches:
@@ -11,7 +11,7 @@ jobs:
     runs-on: andromeda-self-runner
 
     steps:
-      - name: Production Checkout
+      - name: PSD Production Checkout
         uses: actions/checkout@v2
         with:
           # Add branch name below: ee5_prod/<branch-name>
