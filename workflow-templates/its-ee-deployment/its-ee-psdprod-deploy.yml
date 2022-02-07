@@ -21,8 +21,9 @@ jobs:
         # Run shell commands from the hosted runner as beanstalk.
         # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
         # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
+        # .env-prod will have db creds relative to the branch name.
       - run: |
-        cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/{{prod env file name}} ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env
+        cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env-prod ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env
         rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
         rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
         rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
