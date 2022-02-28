@@ -24,10 +24,10 @@ jobs:
         # .env-prod will have db creds relative to the branch name.
       - run: |
           cp $GITHUB_WORKSPACE/ee5_prod/system/user/config/.env-prod ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env
-          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
-          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
-          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wseedev06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wsee04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wsee05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
+          rsync --exclude-from=${{ secrets.ANDROMEDA_RSYNC_EXCLUDE }} -rlptD --delete --exclude=system/user/cache/ --chown=beanstalk:webserv $GITHUB_WORKSPACE/ee5_prod/ wsee06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/
 
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wseedev04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wseedev05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
-          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wseedev06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wsee04:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wsee05:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
+          rsync -rlptD --delete  --chown=beanstalk:webserv ~/actions-runner/_work/$GITHUB_REF_NAME/$GITHUB_REF_NAME/ee5_prod/system/user/config/.env wsee06:/var/www/docs/ee_sites/$GITHUB_REF_NAME/system/user/config/
