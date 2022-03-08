@@ -1,0 +1,21 @@
+name: wsalamp-development-deployment
+on:
+  push:
+    branches:
+      development
+jobs:
+  build:
+    runs-on: andromeda-self-runner
+    steps:
+      - name: Development Checkout
+        uses: actions/checkout@v2
+        with:
+          path: wsalampdev
+
+        # Development deployment.
+        # Run shell commands from the hosted runner as beanstalk.
+        # secrets.ANDROMEDA_RSYNC_EXCLUDE is a reference to a long list in /home/beanstalk/actions-runner/rsync-exclude-list.txt on andromeda.
+        # secrets.ANDROMEDA_AWS_PATH is a reference to /var/www/docs/ee_sites/ on the aws servers.
+      - run: |
+          rsync  -rlptD --delete  $GITHUB_WORKSPACE/wsalampdev/* wsalampdev01:${{ secrets.WSALAMP_DEV_PATH }}/
+          rsync  -rlptD --delete  $GITHUB_WORKSPACE/wsalampdev/* wsalampdev02:${{ secrets.WSALAMP_DEV_PATH }}/
