@@ -16,5 +16,5 @@ jobs:
         # Run shell commands from the hosted runner as beanstalk.
         # secrets.WSALAMP_DEV_PATH is a reference to the vhost on the dev servers.
       - run: |
-          rsync  -rlptD --delete  $GITHUB_WORKSPACE/wsalampdev/* wsalampdev01:${{ secrets.WSALAMP_DEV_PATH }}/
-          rsync  -rlptD --delete  $GITHUB_WORKSPACE/wsalampdev/* wsalampdev02:${{ secrets.WSALAMP_DEV_PATH }}/
+          rsync  -rlptD --delete  --chown=beanstalk:webserv $GITHUB_WORKSPACE/wsalampdev/* wsalampdev01:${{ secrets.WSALAMP_DEV_PATH }}/
+          rsync  -rlptD --delete  --chown=beanstalk:webserv $GITHUB_WORKSPACE/wsalampdev/* wsalampdev02:${{ secrets.WSALAMP_DEV_PATH }}/
