@@ -1,0 +1,5 @@
+{
+  "name": "ITS Expression Engine PSD Branch Deployment Workflow",
+  "description": "ITS EE PSD workflow template for individual branch to production.",
+  "iconName": "its-ee-psdbranch-template"
+}
