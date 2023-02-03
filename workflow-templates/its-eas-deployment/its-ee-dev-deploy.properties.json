@@ -1,5 +1,6 @@
 {
   "name": "ITS Expression Engine Dev Deployment Workflow",
   "description": "ITS EE workflow template for development.",
+  "categories": ["Continuous integration"],
   "iconName": "its-ee-dev-template"
 }
